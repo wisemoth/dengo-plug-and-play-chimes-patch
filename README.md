@@ -12,27 +12,35 @@ will also need a USB flash drive and a powered USB OTG hub. Please have at
 least 2GB free on the USB flash drive for a backup.
 
 The USB OTG hub I use can be found [here](https://www.amazon.ca/gp/product/B07BDJN76M).
+You can also use an angle adapter instead of a hub, but I find the quality
+inconsistent, meaning that sometimes it may not make contact properly and cause
+issues.
 
 Usage
 -----
 1. From your Densha de Go! Final installation, copy all files in
    `cddata\dengo\Chime` to the `Chime` folder here.
-2. Prepare a USB drive by formatting it to FAT32. Please search online if you
-   need instructions on how to do this.
+2. Prepare a USB drive by formatting it to FAT32. Make sure that there is a
+   partition table present, and the FAT32 partition is the first one, as the
+   factory script specifically looks at the first partition. Please search
+   online if you need instructions on how to do this.
 3. Copy all of the files in this repository (including the `Chime` folder you
    just put some files into) into the root of your USB drive. Eject the USB
    drive from your computer after it is finished copying.
-4. Plug the USB drive into your USB OTG hub, then plug the hub into the micro
+4. If using Windows and a Git checkout, be sure that the .sh script file has
+   LF line endings, not CRLF.  Use a text editor or other tool to change,
+   if needed, from CRLF to LF and use that copy on the USB drive.
+5. Plug the USB drive into your USB OTG hub, then plug the hub into the micro
    USB port on the back of your Densha de Go! Plug & Play. Plug the power
    cable for your USB OTG hub into the hub and a USB power adapter.
-5. Turn on your Densha de Go! Plug & Play.
-6. The patching script will stop the game app and make a backup of your game
+6. Turn on your Densha de Go! Plug & Play.
+7. The patching script will stop the game app and make a backup of your game
    files, then patch the game executable and copy over the chimes. While this
    is in progress, the door light will light. When it is complete, the unit
    will shut down and you can unplug the USB hub and plug in a regular USB
    power cable. If there is an error during processing, the door light will
    flash. If an error occurs, you can find a log at `log.txt` on the USB drive.
-7. If the patching was successful, you should now be able to hear the original
+8. If the patching was successful, you should now be able to hear the original
    station jingles, musical horns, and limited express passenger announcment
    jingles.
 
